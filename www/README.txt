@@ -1,1 +1,1 @@
-tu bude www stranka, spravi ju Ondro.
+Tu bude www stranka, spravi ju Ondro!
