@@ -1,8 +1,8 @@
 FileETag None
 
 RewriteEngine On
-RewriteBase /
+RewriteBase /jedalne/
 
-RewriteCond %{REQUEST_URI} !css/ 
+RewriteCond %{REQUEST_URI} !css/
 RewriteCond %{REQUEST_URI} !images/
 RewriteRule ^([\/a-zA-Z0-9_\-]+)$ index.php?path=$1 [L,QSA]
