@@ -1,5 +1,11 @@
 <?
-	$arr = strpos_r($_GET["path"],"/");
+	require "modules/url_config.php";
+
+	foreach($_GLOBAL["URL"] as $k=>$v) {
+		$_GET["path"] = str_replace($v, $k, $_GET["path"]);
+	}
+
+	$arr = strpos_r($_GET["path"]."/","/");
 	rsort($arr);
 
 	for($i=0; $i<count($arr);$i++) {
