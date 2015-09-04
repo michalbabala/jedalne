@@ -1,4 +1,6 @@
 <?
+global $db;
+
 $db = new mysqli('misoba.sk', 'jedalne', 'Ophrobro007','jedalne');
 
 if(mysqli_connect_errno()) {
