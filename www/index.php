@@ -1,8 +1,6 @@
 <?
-	echo 'PHP';
+require "system/db/db.php";
+require "system/utils.php";
 
-require "db.php";
-
-
-print_r(getOrders());
+require "modules/redirect_module.php";
 ?>
