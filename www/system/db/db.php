@@ -1,4 +1,9 @@
 <?
+function setUser($data) {
+	global $db;
+	return $db->query('INSERT INTO users VALUES(null,1,"'.$data["firstname"].'","'.$data["lastname"].'","'.$data["email"].'","'.$data["password"].'","'.$data["class_id"].'","'.$data["school_id"].'",0)');
+}
+
 function getUsers() {
 	global $db;
 	$result = $db->query('SELECT * FROM users');

@@ -14,7 +14,7 @@
 	    	Pocet: {$o.count}<br/>
 	    <br/>
 	{foreachelse}
-	Wrong order_ID.
+		Wrong order_ID.
 	{/foreach}
 {else}
 	{foreach $orders as $o}

@@ -1,4 +1,6 @@
 <?
+error_reporting(0);
+
 require 'system/smarty/Smarty.class.php';
 require "system/db/connect.php";
 require "system/utils.php";
