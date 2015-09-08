@@ -1,8 +1,9 @@
-<HTML>
-<HEAD>
-<TITLE>{$pageTitle}</TITLE>
-</HEAD>
-<BODY>
+<html>
+<head>
+<title>{$pageTitle}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
 <div>
 	{block name=menu}{include file="menu.tpl"}{/block}
 </div>
@@ -13,5 +14,5 @@
 
 {block name=content}TU BUDE OBSAH{/block}
 
-</BODY>
-</HTML>
+</body>
+</html>
