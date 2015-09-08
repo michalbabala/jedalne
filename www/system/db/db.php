@@ -1,7 +1,4 @@
 <?
-
-require "connect.php";
-
 function getUsers() {
 	global $db;
 	$result = $db->query('SELECT * FROM users');
@@ -32,7 +29,6 @@ function getMenus() {
 	return process_select_result($result);
 }
 
-
 function getClassesBySchoolId($school_id) {
 	global $db;
 	$result = $db->query('SELECT * FROM classes WHERE school_id='.$school_id);
@@ -42,6 +38,12 @@ function getClassesBySchoolId($school_id) {
 function getUsersByClassId($class_id) {
 	global $db;
 	$result = $db->query('SELECT * FROM users WHERE class_id='.$class_id);
+	return process_select_result($result);
+}
+
+function getOrdersByOrderId($order_id) {
+	global $db;
+	$result = $db->query('SELECT * FROM orders WHERE order_id='.$order_id);
 	return process_select_result($result);
 }
 
@@ -75,19 +77,4 @@ function getMenusByDate($date) {
 	return process_select_result($result);
 }
 
-
-
-
-function process_select_result($sqlresult) {
-	$result = [];
-	if($sqlresult){
-		// Cycle through results
-		while ($row = $sqlresult->fetch_object()){
-			$result[] = $row;
-		}
-		// Free result set
-		$sqlresult->close();
-	}
-	return $result;
-}
 ?>

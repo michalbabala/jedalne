@@ -1,4 +1,7 @@
 <?
+require "db.php";
+require "db_utils.php";
+
 $DB["server"] = 'misoba.sk';
 $DB["login"] = 'jedalne';
 $DB["password"] = 'Ophrobro007';

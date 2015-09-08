@@ -13,6 +13,8 @@
 		$_GLOBAL["module_attributes"] = explode("/",substr($_GET["path"], $arr[$i]+1));
 		if(file_exists("modules/".$_GLOBAL["module_name"]."/index.php")) {
 			require "modules/".$_GLOBAL["module_name"]."/index.php";
+			$SMARTY->assign("_GLOBAL",$_GLOBAL);
+			$SMARTY->display("modules/".$_GLOBAL["module_name"]."/index.tpl");
 			break;
 		}
 	}
