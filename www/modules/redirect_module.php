@@ -1,7 +1,7 @@
 <?
 	require "modules/url_config.php";
 
-	foreach($_GLOBAL["URL"] as $k=>$v) {
+	foreach($_GLOBAL["modules"] as $k=>$v) {
 		$_GET["path"] = str_replace($v, $k, $_GET["path"]);
 	}
 
@@ -14,6 +14,8 @@
 		if(file_exists("modules/".$_GLOBAL["module_name"]."/index.php")) {
 			require "modules/".$_GLOBAL["module_name"]."/index.php";
 			$SMARTY->assign("_GLOBAL",$_GLOBAL);
+			$SMARTY->assign("_GET",$_GET);
+			$SMARTY->assign("_POST",$_POST);
 			$SMARTY->display("modules/".$_GLOBAL["module_name"]."/index.tpl");
 			break;
 		}
