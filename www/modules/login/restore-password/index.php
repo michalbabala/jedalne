@@ -1,0 +1,3 @@
+<?
+	echo 'TODO: restore-password';
+?>

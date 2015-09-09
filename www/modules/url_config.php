@@ -3,10 +3,9 @@
 		"register"				=> "registracia",
 		"login"					=> "prihlasenie",
 		"forgotten-password"	=> "zabudnute-heslo",
+		"restore-password"		=> "obnova-hesla",
 		"orders"				=> "objednavky"
 	];
-
-
 
 	for($i=1; $i<count(explode("/",$_GET["path"])); $i++) {
 		$_GLOBAL["UP"] .= '../';
