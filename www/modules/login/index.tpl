@@ -15,7 +15,7 @@
 
 		<form method="post">	
 			<h5>
-				<a style="padding-right:0.5em;" href="{$_GLOBAL.URL.orders}/forgotten_password">Zabudli ste heslo?</a>
+				<a style="padding-right:0.5em;" href="{$_GLOBAL.URL["forgotten-password"]}">Zabudli ste heslo?</a>
 				  <input type="text" name="email" maxlength="50" size="30" placeholder="email"
 							 value="email"/>
 				  <input type="password" name="password" maxlength="50" size="30" placeholder="Heslo"

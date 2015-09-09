@@ -12,4 +12,5 @@
 	}
 
 	$SMARTY->assign("errors", $errors);
+
 ?>
