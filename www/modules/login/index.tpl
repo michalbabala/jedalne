@@ -13,15 +13,15 @@
 	 </ul></strong>
 
 
-		<form action="main.php" method="post">	
-			<h6 class="header">
-				<a style="padding-right:0.5em; color:white;" href="{$_GLOBAL.URL.orders}/forgotten_password">"Zabudli_ste_heslo"</a>
-				  <input type="text" name="email" maxlength="50" size="50" placeholder="email"
+		<form method="post">	
+			<h5>
+				<a style="padding-right:0.5em;" href="{$_GLOBAL.URL.orders}/forgotten_password">Zabudli ste heslo?</a>
+				  <input type="text" name="email" maxlength="50" size="30" placeholder="email"
 							 value="email"/>
-				  <input type="password" name="password" maxlength="50" size="50" placeholder="Heslo"
+				  <input type="password" name="password" maxlength="50" size="30" placeholder="Heslo"
 							 value="password"/>
 				  <input type="submit" name="submit" value="Prihlasiť" />
-			</h6>
+			</h5>
 		</form>
 
 

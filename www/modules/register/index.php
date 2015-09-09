@@ -23,7 +23,7 @@
 
 		  if(count($errors)==0) {
 		  		if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
-			  		if(count(getUserByEmail($_POST['email']))==0) {
+			  		if(count(getUsersByEmail($_POST['email']))==0) {
 			    		setUser($_POST);
 			    	}
 			    	else {
@@ -33,6 +33,10 @@
 			 	else {
 			 		$errors[] = "Zadaný email nie je platný";
 			 	}
+		  }
+
+		  if (count($errors)==0) {
+		  		echo "OKAAAAAAAAAAAAAj";
 		  }
 	}
 
