@@ -6,15 +6,16 @@
 
 {block name=content}
 
-	<strong style="color:#CC0000;"><ul>
-	    {foreach $errors as $error}
-	      <li>{$error}</li>
-	    {/foreach}
-	 </ul></strong>
+	<strong style="color:#CC0000;">
+		<ul>
+	    	{foreach $errors as $error}
+	      		<li>{$error}</li>
+	    	{/foreach}
+	 	</ul>
+	</strong>
 
 
 	    <form method="post">
-
 		  <table class="border0" style="text-align:center; padding-bottom:10px;">
 				<tr>
 				  <td><label for="firstname"></label></td>

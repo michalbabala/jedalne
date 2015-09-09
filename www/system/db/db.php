@@ -1,7 +1,13 @@
 <?
 function setUser($data) {
 	global $db;
-	return $db->query('INSERT INTO users VALUES(null,1,"'.$data["firstname"].'","'.$data["lastname"].'","'.$data["email"].'","'.$data["password"].'","'.$data["class_id"].'","'.$data["school_id"].'",0)');
+	return $db->query('INSERT INTO users VALUES(null,1,"'.$data["firstname"].'","'.$data["lastname"].'","'.$data["email"].'",PASSWORD("'.($data["password"]).'"),"'.$data["class_id"].'","'.$data["school_id"].'",0)');
+}
+
+function getUserByEmail($email) {
+	global $db;
+	$result = $db->query('SELECT * FROM users WHERE email="'.$email.'"');
+	return process_select_result($result);
 }
 
 function getUsers() {

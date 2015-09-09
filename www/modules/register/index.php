@@ -1,51 +1,37 @@
 <?
 
-$firstname = (isset($_POST['firstname'])) ? trim($_POST['firstname']) : '';
-$lastname = (isset($_POST['lastname'])) ? trim($_POST['lastname']) : '';
-$email = (isset($_POST['email'])) ? trim($_POST['email']) : '';
-$password = (isset($_POST['password'])) ? trim($_POST['password']) : '';
-$school_id = (isset($_POST['school_id'])) ? $_POST['school_id'] : '';
-
-
 	if (isset($_POST['submit'])) {
 
 		  $errors = array();
 
 		  // Kontrola povinných položek.
-		  if (empty($firstname)) {
+		  if (empty($_POST['firstname'])) {
 		    $errors[] = "Zadajte meno";
 		  }
-		  if (empty($lastname)) {
+		  if (empty($_POST['lastname'])) {
 		    $errors[] = "Zadajte priezvisko";
 		  }
-		  if (empty($email)) {
+		  if (empty($_POST['email'])) {
 		    $errors[] = "Zadajte email";
 		  }
-		  if (empty($password)) {
+		  if (empty($_POST['password'])) {
 		    $errors[] = "Zadajte heslo";
 		  }
-		  if ((empty($school_id)) or ($school_id=="0")) {
+		  if ((empty($_POST['school_id'])) or ($_POST['school_id']=="0")) {
 		    $errors[] = "Vyberte názov školy";
 		  }
-error_reporting(E_ALL);
-		if(count($errors)==0) {
-		  setUser($_POST);
-		}
-	}
 
-/*
-	if (count($errors) > 0) {
-	    echo '<strong style="color:#CC0000;"><ul>';
-	    foreach ($errors as $error) {
-	      echo '<li>' . $error . '</li>';
-	    }
-	    echo '</ul></strong>';
-  	}	
-*/
+		  if(count($errors)==0) {
+		  		if(count(getUserByEmail($_POST['email']))==0) {
+		    		setUser($_POST);
+		    	}
+		    	else {
+		    		$errors[] = "Daný email je už zaregistrovaný";
+		    	}
+		  }
+	}
 
 $SMARTY->assign("errors", $errors);
 $SMARTY->assign("schools", getSchools());
-
-	print_r ($_POST);
 
 ?>
