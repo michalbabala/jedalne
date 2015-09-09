@@ -22,12 +22,17 @@
 		  }
 
 		  if(count($errors)==0) {
-		  		if(count(getUserByEmail($_POST['email']))==0) {
-		    		setUser($_POST);
-		    	}
-		    	else {
-		    		$errors[] = "Daný email je už zaregistrovaný";
-		    	}
+		  		if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+			  		if(count(getUserByEmail($_POST['email']))==0) {
+			    		setUser($_POST);
+			    	}
+			    	else {
+			    		$errors[] = "Zadaný email je už zaregistrovaný";
+			    	}
+			    }
+			 	else {
+			 		$errors[] = "Zadaný email nie je platný";
+			 	}
 		  }
 	}
 
