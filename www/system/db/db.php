@@ -12,7 +12,6 @@ function getUsersByEmail($email) {
 
 function getUsersByEmailAndPassword($email,$password) {
 	global $db;
-	echo 'SELECT * FROM users WHERE email="'.$email.'" AND password=PASSWORD("'.$password.'")';
 	$result = $db->query('SELECT * FROM users WHERE email="'.$email.'" AND password=PASSWORD("'.$password.'")');
 	return process_select_result($result);
 }
