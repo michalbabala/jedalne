@@ -16,8 +16,9 @@ $users = getUsersByToken($users_token);
 
 	if (isset($_POST['submit'])) {
 
-
-			updateUsersPasswordByToken($_POST);
+			$USER = $users[0];
+			$USER["password"] = $_POST["password"];
+			setUser($USER);
 	
 			echo "heslo sa zmenilo"; 
 	}
