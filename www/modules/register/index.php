@@ -1,7 +1,7 @@
 <?
 
 	if (isset($_POST['submit'])) {
-		
+
 		  $errors = array();
 
 		  // Kontrola povinných položek.
@@ -24,7 +24,19 @@
 		  if(count($errors)==0) {
 		  		if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
 			  		if(count(getUsersByEmail($_POST['email']))==0) {
-			    		setUser($_POST);
+
+				  		$USER = [];
+				  		$USER["user_type"]=1;
+				  		$USER["firstname"]=$_POST["firstname"];
+				  		$USER["lastname"]=$_POST["lastname"];
+				  		$USER["email"]=$_POST["email"];
+				  		$USER["password"]=$_POST["password"];
+				  		$USER["class_id"]=$_POST["class_id"];
+				  		$USER["school_id"]=$_POST["school_id"];
+				  		$USER["account"]="0";
+				  		$USER["token"]="";
+
+				  		setUser($USER);
 			    	}
 			    	else {
 			    		$errors[] = "Zadaný email je už zaregistrovaný";
