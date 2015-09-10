@@ -1,4 +1,14 @@
 <?
+function updateUsersPasswordByToken($data) {
+	global $db;
+	return $db->query('UPDATE users SET password=PASSWORD("'.($data["password"]).'") WHERE token="'.$data["token"].'"');
+}
+
+function updateUsersTokenByEmail($data) {
+	global $db;
+	return $db->query('UPDATE users SET token="'.$data["token"].'" WHERE email="'.$data["email"].'"');
+}
+
 function setUser($data) {
 	global $db;
 	return $db->query('INSERT INTO users VALUES(null,1,"'.$data["firstname"].'","'.$data["lastname"].'","'.$data["email"].'",PASSWORD("'.($data["password"]).'"),"'.$data["class_id"].'","'.$data["school_id"].'",0,"")');
@@ -55,6 +65,12 @@ function getClassesBySchoolId($school_id) {
 function getUsersByClassId($class_id) {
 	global $db;
 	$result = $db->query('SELECT * FROM users WHERE class_id='.$class_id);
+	return process_select_result($result);
+}
+
+function getUsersByToken($token) {
+	global $db;
+	$result = $db->query('SELECT * FROM users WHERE token="'.$token.'"');
 	return process_select_result($result);
 }
 

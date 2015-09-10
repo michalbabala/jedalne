@@ -13,7 +13,7 @@ function strpos_r($haystack, $needle)
     return $seeks;
 }
 
-function generateRandomString($length = 10) {
+function generateRandomString($length = 32) {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $charactersLength = strlen($characters);
     $randomString = '';

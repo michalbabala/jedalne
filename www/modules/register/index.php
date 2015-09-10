@@ -1,7 +1,7 @@
 <?
 
 	if (isset($_POST['submit'])) {
-
+		
 		  $errors = array();
 
 		  // Kontrola povinných položek.
